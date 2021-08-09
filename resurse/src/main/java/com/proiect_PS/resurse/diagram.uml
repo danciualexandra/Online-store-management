@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="221.0" y="0.0">com.proiect_PS.resurse.repository</node>
+    <node x="0.0" y="150.0">com.proiect_PS.resurse.security</node>
+    <node x="0.0" y="75.0">com.proiect_PS.resurse.constants</node>
+    <node x="197.0" y="225.0">com.proiect_PS.resurse.config</node>
+    <node x="181.0" y="300.0">com.proiect_PS.resurse.utils</node>
+    <node x="213.0" y="75.0">com.proiect_PS.resurse.exception</node>
+    <node x="0.0" y="300.0">com.proiect_PS.resurse.model</node>
+    <node x="205.0" y="150.0">com.proiect_PS.resurse.factory</node>
+    <node x="0.0" y="225.0">com.proiect_PS.resurse.service</node>
+    <node x="0.0" y="375.0">com.proiect_PS.resurse.dto</node>
+    <node x="0.0" y="0.0">com.proiect_PS.resurse.controller</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="400.5" y="221.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,69 @@
+
+<div id="form">
+
+  <form [formGroup]="registerForm" (submit)="register()">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>userName</mat-label>
+      <input matInput formControlName="userName" required minlength="2" maxlength="50">
+      <div  *ngIf="userName.errors">
+        <div *ngIf=userName.errors.minlength style="color:red">The username must be minum 2 characters</div>
+        <div *ngIf=userName.errors.maxlength style="color:red">The username maximum characters are 50</div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="password" required minlength="4" maxlength="50">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>firstName</mat-label>
+      <input matInput formControlName="firstName" required >
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>lastName</mat-label>
+      <input matInput formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>address</mat-label>
+      <input matInput formControlName="address" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>phone</mat-label>
+      <input matInput formControlName="phone" required minlength="10" maxlength="10">
+      <div  *ngIf="phone.errors">
+        <div *ngIf=phone.errors.minlength style="color:red">The dimension is fixed (10 numbers)</div>
+        <div *ngIf=phone.errors.maxlength style="color:red">The dimension is fixed (10 numbers)</div>
+      </div>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>gender</mat-label>
+      <input matInput formControlName="gender" required minlength="1" maxlength="1">
+      <div  *ngIf="gender.errors">
+        <div *ngIf=gender.errors.minlength style="color:red">Only one character f--female m--male</div>
+        <div *ngIf=gender.errors.maxlength style="color:red">Only one character f--female m--male</div>
+      </div>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>zipcode</mat-label>
+      <input matInput formControlName="zipCode" required minlength="6" maxlength="6">
+      <div  *ngIf="zipCode.errors">
+        <div *ngIf=zipCode.errors.minlength style="color:red">6 characters number</div>
+        <div *ngIf=zipCode.errors.maxlength style="color:red">6 characters number</div>
+      </div>
+    </mat-form-field>
+
+
+    <br/>
+    <button mat-button type="submit">Register
+      <mat-icon >app_registration</mat-icon>
+
+    </button>
+
+  </form>
+</div>
+
+

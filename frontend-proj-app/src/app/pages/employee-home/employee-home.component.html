@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<router-outlet></router-outlet>
+<button mat-raised-button (click)="logout()" color="primary">logout
+  <mat-icon >logout</mat-icon>
+</button>
+<h2>Product List</h2>
+
+<input type="text" #myInput [(ngModel)]="pName" (input)="search()" />
+<div>
+ <mat-form-field>
+   <mat-select [(value)]="filter.field">
+     <mat-option>None</mat-option>
+     <mat-option value ="productPrice">Price</mat-option>
+     <mat-option value ="expiration">Expiration</mat-option>
+
+
+   </mat-select>
+
+ </mat-form-field>
+  <mat-form-field>
+    <mat-select [(value)]="filter.criteria">
+      <mat-option value =">"  *ngIf="filter.field=='productPrice'">Greater than</mat-option>
+      <mat-option value ="<"  *ngIf="filter.field=='productPrice'">Lesser than</mat-option>
+      <mat-option value ="=="  *ngIf="filter.field=='productPrice'">Equals</mat-option>
+      <mat-option value ="before"  *ngIf="filter.field=='expiration'">Before</mat-option>
+      <mat-option value ="after"  *ngIf="filter.field=='expiration'">After</mat-option>
+
+
+    </mat-select>
+
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Value" [(ngModel)]="filter.filtervalue">
+  </mat-form-field>
+  <button mat-raised-button (click)="filterData()" color="primary">Filter products
+    <mat-icon >filter_list</mat-icon>
+  </button>
+
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Product name</th>
+    <th>Quantity</th>
+    <th>Manufacturing</th>
+    <th>Expiration</th>
+    <th>Delivery</th>
+    <th>Company name</th>
+    <th>Price</th>
+
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productList">
+    <td>{{product.id}}</td>
+    <td>{{product.productName}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.manufacturing}}</td>
+    <td>{{product.expiration}}</td>
+    <td>{{product.shipDeliveryPrice}}</td>
+    <td>{{product.companyName}}</td>
+    <td>{{product.productPrice}}</td>
+
+  </tr>
+
+
+
+
+  </tbody>
+
+
+
+</table>

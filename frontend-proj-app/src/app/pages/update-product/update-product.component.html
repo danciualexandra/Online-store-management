@@ -1,0 +1,37 @@
+
+<div id="form">
+
+  <form [formGroup]="productForm" (submit)="updateProduct()">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>productName</mat-label>
+      <input matInput formControlName="productName" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>productPrice</mat-label>
+      <input matInput formControlName="productPrice" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>quantity</mat-label>
+      <input matInput formControlName="quantity" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>manufacturing</mat-label>
+      <input matInput formControlName="manufacturing" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>expiration</mat-label>
+      <input matInput formControlName="expiration" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>shipDeliveryPrice</mat-label>
+      <input matInput formControlName="shipDeliveryPrice" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>companyName</mat-label>
+      <input matInput formControlName="companyName" required>
+    </mat-form-field>
+
+    <br/>
+    <button mat-button type="submit">Update Product</button>
+  </form>
+</div>

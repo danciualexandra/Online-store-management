@@ -1,0 +1,52 @@
+<h3>Hire Employee</h3>
+<div id="form">
+
+  <form [formGroup]="employeeForm" (submit)="createEmployee()">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>userName</mat-label>
+      <input matInput formControlName="userName" required minlength="2" maxlength="50">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="password" required minlength="2" maxlength="50">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>firstName</mat-label>
+      <input matInput formControlName="firstName" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>lastName</mat-label>
+      <input matInput formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>address</mat-label>
+      <input matInput formControlName="address" required>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>phone</mat-label>
+      <input matInput formControlName="phone" required minlength="10" maxlength="10">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>gender</mat-label>
+      <input matInput formControlName="gender" required minlength="1" maxlength="1">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>zipCode</mat-label>
+      <input matInput formControlName="zipCode" required minlength="6" maxlength="6">
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>salary</mat-label>
+      <input matInput formControlName="salary" required>
+    </mat-form-field>
+
+    <br/>
+    <button mat-button type="submit">Add Employee
+      <mat-icon >person_add</mat-icon>
+    </button>
+  </form>
+</div>
+

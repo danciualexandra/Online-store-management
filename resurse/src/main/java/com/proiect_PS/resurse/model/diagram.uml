@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="188.0" y="0.0">com.proiect_PS.resurse.model.Product</node>
+    <node x="436.75" y="110.0">com.proiect_PS.resurse.model.Employee</node>
+    <node x="312.0" y="0.0">com.proiect_PS.resurse.model.Account</node>
+    <node x="258.3333333333333" y="190.0">com.proiect_PS.resurse.model.Orders</node>
+    <node x="0.0" y="265.0">com.proiect_PS.resurse.model.Payment</node>
+    <node x="568.75" y="110.0">com.proiect_PS.resurse.model.Admin</node>
+    <node x="471.33333333333337" y="0.0">com.proiect_PS.resurse.model.User</node>
+    <node x="250.33333333333331" y="110.0">com.proiect_PS.resurse.model.Customer</node>
+    <node x="0.0" y="0.0">com.proiect_PS.resurse.model.DiscountVoucher</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.proiect_PS.resurse.model.Customer" target="com.proiect_PS.resurse.model.Account">
+      <point x="21.0" y="-15.0" />
+      <point x="327.3333333333333" y="60.0" />
+      <point x="390.0" y="60.0" />
+      <point x="26.0" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Admin" target="com.proiect_PS.resurse.model.User">
+      <point x="-22.0" y="-15.0" />
+      <point x="590.75" y="90.0" />
+      <point x="531.3333333333334" y="90.0" />
+      <point x="20.0" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Customer" target="com.proiect_PS.resurse.model.DiscountVoucher">
+      <point x="-49.0" y="-15.0" />
+      <point x="257.3333333333333" y="90.0" />
+      <point x="84.0" y="90.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Customer" target="com.proiect_PS.resurse.model.Product">
+      <point x="-35.0" y="-15.0" />
+      <point x="271.3333333333333" y="80.0" />
+      <point x="205.33333333333334" y="80.0" />
+      <point x="-34.666666666666664" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Customer" target="com.proiect_PS.resurse.model.User">
+      <point x="49.0" y="-15.0" />
+      <point x="355.3333333333333" y="80.0" />
+      <point x="491.33333333333337" y="80.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Employee" target="com.proiect_PS.resurse.model.User">
+      <point x="28.0" y="-15.0" />
+      <point x="520.75" y="90.0" />
+      <point x="518.0" y="90.0" />
+      <point x="6.666666666666686" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Orders" target="com.proiect_PS.resurse.model.Customer">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.proiect_PS.resurse.model.Product" target="com.proiect_PS.resurse.model.Customer">
+      <point x="34.66666666666666" y="15.0" />
+      <point x="274.66666666666663" y="60.0" />
+      <point x="299.3333333333333" y="60.0" />
+      <point x="-7.0" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="4.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

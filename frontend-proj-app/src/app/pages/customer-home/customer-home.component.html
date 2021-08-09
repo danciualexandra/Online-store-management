@@ -1,0 +1,159 @@
+
+<script src="../update-employee/update-employee.component.ts"></script>
+<router-outlet></router-outlet>
+<header>
+  <div class="container">
+      <div class ="col-md-12 text right">
+        <div class ="cart_icon" >
+           <div class="cart_value">
+             <button mat-raised-button (click)="backClick()">Home
+               <mat-icon >home</mat-icon>
+             </button>
+             <button mat-raised-button (click)="btnClick()" >View Cart
+               <a routerLink="/cart" routerLinkActive="active"></a>
+               <mat-icon >shopping_cart</mat-icon>
+             </button>
+             <button mat-raised-button (click)="viewClick()">View Products
+               <mat-icon >list_alt</mat-icon>
+             </button>
+             <button mat-raised-button (click)="logout()">Logout
+               <mat-icon >logout</mat-icon>
+             </button>
+           </div>
+        </div>
+      </div>
+
+  </div>
+</header>
+<div *ngIf="show">
+
+  <mat-list>
+    <div mat-subheader>List of products</div>
+
+    <mat-list-item *ngFor="let product of productList">
+      <div mat-line> Company:  {{product.companyName}} </div>
+      <div mat-line> {{product.productName}}</div>
+      <div mat-line> price : {{product.productPrice}} RON </div>
+      <div mat-line> delivery: {{product.shipDeliveryPrice}} RON</div>
+      <button mat-raised-button (click)="addToCart(product)" >
+
+        <mat-icon >add</mat-icon>
+
+      </button>
+    </mat-list-item>
+
+  </mat-list>
+</div>
+
+
+<div *ngIf="showCart">
+  <mat-list>
+    <div mat-subheader>My Shop Cart</div>
+
+    <mat-list-item *ngFor="let product of cartList">
+      <div mat-line> Company:  {{product.companyName}} </div>
+      <div mat-line> {{product.productName}}</div>
+      <div mat-line> price : {{product.productPrice}} RON </div>
+      <div mat-line> delivery: {{product.shipDeliveryPrice}} RON</div>
+      <button mat-raised-button (click)="removeFromCart()" >
+
+        <mat-icon >delete_outline</mat-icon>
+
+      </button>
+
+    </mat-list-item>
+  <br>
+    <mat-list-item> Delivery price: {{displayDelivery()}} RON
+    </mat-list-item>
+
+    <mat-list-item> Total: {{computeSum()}} RON</mat-list-item>
+    <br>
+   <mat-list-item *ngIf="computeSum()!=0.0">
+     <mat-radio-group  >
+       <mat-radio-button value="cash" (change)="onChange($event)" >Cash on delivery
+         <mat-icon >price_check</mat-icon>
+       </mat-radio-button>
+       <br>
+       <mat-radio-button value="card" (change)="onChange($event)">Card
+         <mat-icon >credit_card</mat-icon>
+       </mat-radio-button>
+       <br>
+       <br>
+
+
+
+
+
+
+
+       <button mat-raised-button (click)="payment()" color="accent">Confirm Data
+
+         <mat-icon >check_circle_outline</mat-icon>
+
+
+       </button>
+
+
+     <button mat-raised-button (click)="confirm()" color="accent">Send email
+
+         <mat-icon >check_circle_outline</mat-icon>
+
+       </button>
+
+
+
+
+
+
+     </mat-radio-group>
+
+
+       <input type="text"  [(ngModel)]="voucherInput" >
+     <mat-icon >loyalty</mat-icon>
+
+       <input type="text" *ngIf="showIbanField()==true" [(ngModel)]="IBAN">
+     <mat-icon *ngIf="showIbanField()==true">credit_card</mat-icon>
+
+     <button mat-raised-button (click)="newSum()" color="accent">Apply voucher
+
+       <mat-icon >check_circle_outline</mat-icon>
+
+     </button>
+
+
+
+
+
+   </mat-list-item>
+
+
+  </mat-list>
+
+
+
+
+</div>
+<div *ngIf="show==false && showCart==false">
+
+  <mat-list>
+    <div mat-subheader>Vouchers</div>
+
+    <mat-list-item *ngFor="let voucher of voucherList">
+      <div mat-line> code:  {{voucher.voucherCode}} </div>
+      <mat-divider></mat-divider>
+      <mat-icon >loyalty</mat-icon>
+
+    </mat-list-item>
+
+  </mat-list>
+
+
+
+</div>
+
+
+
+
+
+
+

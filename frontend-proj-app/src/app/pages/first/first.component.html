@@ -1,0 +1,154 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+
+    <li class ="nav-item">
+      <a routerLink="create-employee" routerLinkActive="active" class="nav-link">Add Employee</a>
+
+    </li>
+    <li class ="nav-item">
+      <a routerLink="create-product" routerLinkActive="active" class="nav-link">Add Product</a>
+
+    </li>
+    <li class ="nav-item">
+      <a routerLink="display-chart" routerLinkActive="active" class="nav-link">Charts</a>
+
+    </li>
+    <button mat-raised-button (click)="logout()" >logout
+      <mat-icon >logout</mat-icon>
+    </button>
+
+  </ul>
+
+</nav>
+
+<div>
+  Connected users: {{nrOfUsers}}
+</div>
+
+<h2>Product List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Product name</th>
+    <th>Quantity</th>
+    <th>Manufacturing</th>
+    <th>Expiration</th>
+    <th>Delivery</th>
+    <th>Company name</th>
+    <th>Actions</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productList">
+    <td>{{product.id}}</td>
+    <td>{{product.productName}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.manufacturing}}</td>
+    <td>{{product.expiration}}</td>
+    <td>{{product.shipDeliveryPrice}}</td>
+    <td>{{product.companyName}}</td>
+    <td>
+      <button mat-raised-button (click)="deleteProduct(product.id)" >Delete
+        <mat-icon >clear</mat-icon>
+      </button>
+      <button mat-raised-button (click)="updateProduct(product.id)" >Update
+        <mat-icon >update</mat-icon>
+      </button>
+      <button mat-raised-button (click)="exportData('txt',product.id)" >Export TXT
+
+      </button>
+      <button mat-raised-button (click)="exportData('xml',product.id)" >Export XML
+
+      </button>
+
+    </td>
+  </tr>
+
+
+
+
+  </tbody>
+
+
+
+</table>
+
+
+
+<h2>Employee List</h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>User Name</th>
+    <th>Password</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Gender</th>
+    <th>Zipcode</th>
+    <th>Salary</th>
+    <th>Actions</th>
+
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employeeList">
+    <td>{{employee.id}}</td>
+    <td>{{employee.userName}}</td>
+    <td>{{employee.password}}</td>
+    <td>{{employee.firstName}}</td>
+    <td>{{employee.lastName}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.address}}</td>
+    <td>{{employee.phone}}</td>
+    <td>{{employee.gender}}</td>
+    <td>{{employee.zipCode}}</td>
+    <td>{{employee.salary}}</td>
+    <td>
+      <button mat-raised-button (click)="deleteEmployee(employee.id)" >Fire
+        <mat-icon >person_remove</mat-icon>
+
+
+
+      </button>
+      <button mat-raised-button (click)="updateEmployee(employee.id)" >Update
+        <mat-icon >update</mat-icon>
+      </button>
+
+    </td>
+  </tr>
+
+
+
+
+  </tbody>
+
+
+
+</table>
+
+<footer class="footer">
+  <div class="container">
+
+
+  </div>
+
+</footer>
+
+
+
+
+
